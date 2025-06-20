@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interfaz Docente</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+  <h1>Autorización de Salida</h1>
+
+  <label for="alumno">Seleccionar alumno:</label>
+  <select id="alumno">
+    <option value="">-- Seleccione un alumno --</option>
+    <option value="fabrizio">Fabrizio Benegas</option>
+    <option value="sol">Sol Bernal</option>
+    <option value="bruno">Bruno González</option>
+    <option value="enrique">Enrique González</option>
+    <option value="fredy">Fredy Segovia</option>
+  </select>
+
+  <label for="destino">Destino dentro del colegio:</label>
+  <select id="destino">
+    <option value="">-- Seleccione un destino --</option>
+    <option value="sanitario">Sanitario</option>
+    <option value="cantina">Cantina</option>
+    <option value="direccion">Dirección</option>
+    <option value="secretaria">Secretaría</option>
+    <option value="libreria">Librería</option>
+    <option value="biblioteca">Biblioteca</option>
+    <option value="sDeProfes">Sala de Profesores</option>
+    <option value="Coordinación">Coordinación</option>
+    <option value="otras_salas">Otras salas de clase</option>
+  </select>
+
+  <button onclick="autorizarViaje()">Autorizar salida</button>
+</div>
+
+<script>
+  function autorizarViaje() {
+    const alumno = document.getElementById("alumno").value;
+    const destino = document.getElementById("destino").value;
+
+    if (!alumno || !destino) {
+      alert("Por favor seleccione un alumno y un destino.");
+    } else {
+      alert(`Autorizado: El alumno puede ir a ${destino}.`);
+      //Esperar un tiempo
+      setTimeout(()=>{
+        window.location.href="http://192.168.0.14/Enriquee/ProyectoPrueba/";
+      },1500)
+    }
+  }
+</script>
+
+</body>
+</html>
